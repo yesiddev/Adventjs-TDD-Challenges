@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { filteredSheeps, sheeps } from '../../src/adventjs/challenge01';
 
-describe('Adventjs challege #01', () => {
+describe('adventjs challege #01', () => {
   it.skip('should return a list of red sheep', () => {
     expect(filteredSheeps(sheeps)).toEqual([
       { name: 'Euge', color: 'rojo' },
