@@ -32,6 +32,11 @@ export const sheeps: ISheeps[] = [
 }; */
 
 // Refactoring Solution
+/**
+ * It filters the sheeps array by color, then filters the resulting array by name
+ * @param {ISheeps[]} sheeps - ISheeps[]
+ * @returns An array of objects that have the color red and the name includes the letters n and a.
+ */
 export const filteredSheeps = (sheeps: ISheeps[]): ISheeps[] => {
   const redSheeps = sheeps.filter(({ color }) => color === 'rojo');
   const correctSheeps = redSheeps.filter(({ name }) => {
@@ -40,3 +45,5 @@ export const filteredSheeps = (sheeps: ISheeps[]): ISheeps[] => {
   });
   return correctSheeps;
 };
+
+console.log(filteredSheeps(sheeps));

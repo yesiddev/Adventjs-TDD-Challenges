@@ -3,18 +3,20 @@ Transforma el texto a un objeto que contenga el nombre de cada regalo y las vece
 si el regalo tiene un _ antes de la palabra quiere decir que está tachado y no se tiene que contar.
 */
 
-export const letter = 'bici coche balón _playstation bici coche peluche'
+const letter = 'bici coche  balón _playstation bici  coche  peluche'
 
-export const letterTransform = (letter: string) => {
+const letterTranform = (letter: string) => {
   const gifts = letter
     .split(' ')
     .filter((gift) => gift !== '' && !gift.includes('_'))
 
-  const objectConverted = gifts.map((value, i, array) => ({
-    [value]: array.filter((str) => str === value).length,
+  const objectConverted = gifts.map((name, i, array) => ({
+    [name]: array.filter((value) => value === name).length
   }))
 
   const result = Object.assign({}, ...objectConverted)
 
   return result
 }
+
+console.log(letterTranform(letter))
